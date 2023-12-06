@@ -12,6 +12,13 @@ class EntryViewModel(private val repositoriSiswa: OfflineRepositoriSiswa): ViewM
      */
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
     private set
+
+    /* Fungsi untuk memvalidasi input*/
+    private fun validasiInput(uiState:DetailSiswa = uiStateSiswa.detailSiswa): Boolean{
+        return with(uiState){
+            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
+        }
+    }
 }
 
 data class UIStateSiswa(
