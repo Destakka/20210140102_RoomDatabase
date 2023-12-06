@@ -12,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -24,11 +25,22 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.pam_act7.R
 import com.example.pam_act7.data.Siswa
+import com.example.pam_act7.model.HomeViewModel
 import com.example.pam_act7.navigasi.DestinasiNavigasi
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
     override val titleRes = R.string.app_name
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreen(
+    navigateToItemEntry: () -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+){
+
 }
 
 @Composable
