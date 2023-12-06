@@ -3,6 +3,7 @@ package com.example.pam_act7.ui.halaman
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -12,6 +13,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.room.util.TableInfo
 import com.example.pam_act7.R
 import com.example.pam_act7.model.DetailSiswa
@@ -68,6 +70,15 @@ fun FormInputSiswa(
             value = detailSiswa.alamat,
             onValueChange = {onValueChange(detailSiswa.copy(alamat = it))},
             label = { Text(stringResource(id = R.string.alamat))},
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
+        OutlinedTextField(
+            value = detailSiswa.telpon,
+            onValueChange = {onValueChange(detailSiswa.copy(telpon = it))},
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            label = { Text(stringResource(id = R.string.telpon))},
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
