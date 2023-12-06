@@ -4,7 +4,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -27,6 +29,7 @@ import com.example.pam_act7.model.EntryViewModel
 import com.example.pam_act7.model.PenyediaViewModel
 import com.example.pam_act7.model.UIStateSiswa
 import com.example.pam_act7.navigasi.DestinasiNavigasi
+import kotlinx.coroutines.launch
 
 object DestinasiEntry: DestinasiNavigasi {
     override val route = "item_entry"
@@ -60,6 +63,10 @@ fun EntrySiswaScreen(
                 navigateBack()
             }
         },
+        modifier = Modifier
+            .padding(innerPadding)
+            .verticalScroll(rememberScrollState())
+            .fillMaxWidth())
     }
 }
 @Composable
