@@ -1,12 +1,18 @@
 package com.example.pam_act7.ui.halaman
 
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import com.example.pam_act7.R
+import com.example.pam_act7.model.DetailSiswa
 import com.example.pam_act7.model.EntryViewModel
+import com.example.pam_act7.model.PenyediaViewModel
+import com.example.pam_act7.model.UIStateSiswa
 import com.example.pam_act7.navigasi.DestinasiNavigasi
 
 object DestinasiEntry: DestinasiNavigasi {
@@ -18,9 +24,17 @@ object DestinasiEntry: DestinasiNavigasi {
 fun EntrySiswaScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory)
+    viewModel: EntryViewModel =viewModel(factory = PenyediaViewModel.Factory)
 ){
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+}
+@Composable
+fun EntrySiswaBody(
+    uiStateSiswa: UIStateSiswa,
+    onSiswaValueChange: (DetailSiswa) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+){
 
 }
