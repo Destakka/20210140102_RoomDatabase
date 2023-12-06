@@ -13,3 +13,10 @@ object PenyediaViewModel {
         }
     }
 }
+
+/**
+ * Fungsi ekstensi query untuk object [Application] dan mengembalikan sebuah instance dari [AplikasiSiswa].
+ */
+
+fun CreationExtras.aplikasiSiswa():AplikasiSiswa =
+    (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiSiswa)
