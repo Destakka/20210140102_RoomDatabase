@@ -4,6 +4,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.example.pam_act7.data.Siswa
 import com.example.pam_act7.repositori.OfflineRepositoriSiswa
 
 class EntryViewModel(private val repositoriSiswa: OfflineRepositoriSiswa): ViewModel() {
@@ -44,5 +45,13 @@ data class DetailSiswa(
     val alamat: String = "",
     val telpon: String = ""
 )
+fun DetailSiswa.toSiswa(): Siswa = Siswa(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telpon = telpon
+)
+
+
 
 
