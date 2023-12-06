@@ -1,13 +1,14 @@
 package com.example.pam_act7.ui.halaman
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.dimensionResource
+import androidx.room.util.TableInfo
 import com.example.pam_act7.R
 import com.example.pam_act7.model.DetailSiswa
 import com.example.pam_act7.model.EntryViewModel
@@ -47,4 +48,10 @@ fun FormInputSiswa(
     onValueChange: (DetailSiswa) -> Unit = {},
     enabled: Boolean = true
 ) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+    ){
+        
+    }
 }
