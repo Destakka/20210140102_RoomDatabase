@@ -19,6 +19,11 @@ class EntryViewModel(private val repositoriSiswa: OfflineRepositoriSiswa): ViewM
             nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
         }
     }
+
+    fun updateUiState(detailSiswa: DetailSiswa){
+        uiStateSiswa =
+            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput(detailSiswa))
+    }
 }
 
 data class UIStateSiswa(
