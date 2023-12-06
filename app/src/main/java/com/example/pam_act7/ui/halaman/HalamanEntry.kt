@@ -28,6 +28,7 @@ fun EntrySiswaScreen(
 ){
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+
 }
 @Composable
 fun EntrySiswaBody(
@@ -36,5 +37,14 @@ fun EntrySiswaBody(
     onSaveClick: () -> Unit,
     modifier: Modifier = Modifier
 ){
+}
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormInputSiswa(
+    detailSiswa: DetailSiswa,
+    modifier: Modifier = Modifier,
+    onValueChange: (DetailSiswa) -> Unit = {},
+    enabled: Boolean = true
+) {
 }
