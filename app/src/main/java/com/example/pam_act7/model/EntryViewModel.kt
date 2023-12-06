@@ -7,6 +7,11 @@ import androidx.lifecycle.ViewModel
 import com.example.pam_act7.repositori.OfflineRepositoriSiswa
 
 class EntryViewModel(private val repositoriSiswa: OfflineRepositoriSiswa): ViewModel() {
+    /**
+     * Berisi status Siswa saat ini
+     */
+    var uiStateSiswa by mutableStateOf(UIStateSiswa())
+    private set
 }
 
 data class UIStateSiswa(
